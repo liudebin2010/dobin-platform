@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.v51das.dobin</groupId>
+	<artifactId>dobin-hystrix</artifactId>
+	<packaging>jar</packaging>
+	<name>dobin-hystrix</name>
+	<description>dobin-hystrix</description>
+
+	<parent>
+		<groupId>com.v51das.dobin</groupId>
+		<artifactId>dobin-backend</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<spring.boot.admin.version>2.4.0</spring.boot.admin.version>
+	</properties>
+
+	<dependencies>
+		<!-- spring boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<!--consul-->
+	    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+			<version>3.0.1</version>
+	    </dependency>
+	    <!--actuator-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--spring-boot-admin-->
+       	<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-starter-client</artifactId>
+		    <version>${spring.boot.admin.version}</version>
+		</dependency>
+		<!--hystrix-dashboard-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+			<version>2.2.7.RELEASE</version>
+		</dependency>
+		<!--turbine-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+			<version>2.2.7.RELEASE</version>
+			<exclusions>  
+				 <exclusion>     
+					  <groupId>org.springframework.cloud</groupId>
+					  <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+				 </exclusion>  
+			</exclusions> 
+		</dependency>
+	</dependencies>
+
+</project>

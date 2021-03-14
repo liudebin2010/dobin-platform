@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.v51das.dobin</groupId>
+    <artifactId>dobin-consumer</artifactId>
+    <packaging>jar</packaging>
+    <name>dobin-consumer</name>
+    <description>dobin-consumer</description>
+
+    <parent>
+        <groupId>com.v51das.dobin</groupId>
+        <artifactId>dobin-backend</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <swagger.version>2.9.2</swagger.version>
+		<mybatis.spring.version>1.3.2</mybatis.spring.version>
+		<spring.boot.admin.version>2.4.0</spring.boot.admin.version>
+    </properties>
+
+    <dependencies>
+        <!-- web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!--spring-boot-admin-->
+           <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring.boot.admin.version}</version>
+        </dependency>
+        <!--consul-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+		<!--feign -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		    <version>3.0.1</version>
+        </dependency>
+        <!--test-->
+		<!--actuator-->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--hystrix-dashboard-->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>2.2.7.RELEASE</version>
+        </dependency>
+		<!-- zipkin -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <version>2.2.7.RELEASE</version>
+		</dependency>
+		<!-- spring-cloud-config -->
+		<dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-starter-config</artifactId>
+            <version>3.0.1</version>
+		</dependency>
+		<!-- bus-amqp -->
+        <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <version>3.0.1</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
